@@ -1,0 +1,103 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #d32f2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.stats-row, .row, .radio-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card, .emergency-calls, .image-detection {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    resize: none;
+}
+
+button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Operator Status */
+.operator-status {
+    margin-bottom: 20px;
+}
+
+.operator-status button {
+    margin-top: 10px;
+}
+
+.unavailable {
+    color: red;
+}
+
+.available {
+    color: green;
+}
+
+/* Call Log Table */
+.call-log table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.call-log th, .call-log td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.call-log th {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.call-log td {
+    text-align: center;
+}

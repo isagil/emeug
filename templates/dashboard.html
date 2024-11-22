@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/dashboard.css">
+    <title>EmeUg Dispatch Dashboard</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to EmeUg Dispatch System</h1>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="operator-status">
+            <h2>Operator Status</h2>
+            <button id="toggle-status" onclick="toggleStatus()">Set as Available</button>
+            <p id="current-status">Status: <span class="unavailable">Unavailable</span></p>
+        </div>
+
+        <div class="stats-row">
+            <div class="card">
+                <h2>Active Incidents</h2>
+                <p>Count: <span>15</span></p>
+            </div>
+            <div class="card">
+                <h2>Available Resources</h2>
+                <p>Count: <span>8</span></p>
+            </div>
+            <div class="card">
+                <h2>New Requests</h2>
+                <p>Count: <span>5</span></p>
+            </div>
+            <div class="card">
+                <h2>Pending Actions</h2>
+                <p>Count: <span>3</span></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="emergency-calls">
+                <h2>Log Emergency Call</h2>
+                <form id="log-call-form" onsubmit="logCall(event)">
+                    <label for="caller-name">Caller Name:</label>
+                    <input type="text" id="caller-name" placeholder="Enter caller name" required>
+                    
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" id="phone-number" placeholder="Enter phone number" required>
+                    
+                    <label for="emergency-type">Emergency Type:</label>
+                    <select id="emergency-type" required>
+                        <option>Crime</option>
+                        <option>Fire</option>
+                        <option>Accident</option>
+                        <option>Other</option>
+                    </select>
+                    
+                    <button type="submit">Log Call</button>
+                </form>
+            </div>
+
+            <div class="image-detection">
+                <h2>Detect Location from Image</h2>
+                <form>
+                    <label for="upload-image">Upload Image:</label>
+                    <input type="file" id="upload-image">
+                    <button type="submit">Detect Location</button>
+                </form>
+                <div id="image-location-result">
+                    Location: Not yet detected.
+                </div>
+            </div>
+        </div>
+
+        <div class="radio-section">
+            <h2>Radio Communication</h2>
+            <textarea id="radio-comm" placeholder="Enter radio communication details here..."></textarea>
+            <button onclick="sendRadio()">Send</button>
+        </div>
+
+        <div class="call-log">
+            <h2>Logged Calls</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Caller Name</th>
+                        <th>Phone Number</th>
+                        <th>Emergency Type</th>
+                        <th>Time Logged</th>
+                    </tr>
+                </thead>
+                <tbody id="call-log-table">
+                    <tr>
+                        <td colspan="4">No calls logged yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 EmeUg Dispatch System
+    </footer>
+
+    <script src="static/js/dashboard.js"></script>
+</body>
+</html>
